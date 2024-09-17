@@ -1,21 +1,22 @@
 import { createConfig } from "@ponder/core";
 import { http } from "viem";
 import { erc721ABI } from "./abis/erc721ABI";
+import { optimism } from "viem/chains";
 
 export default createConfig({
   networks: {
-    arbitrum: {
-      chainId: 42161,
-      transport: http(process.env.PONDER_RPC_URL_42161),
+    optimism: {
+      chainId: optimism.id,
+      transport: http(process.env.PONDER_RPC_URL_10),
     },
   },
   contracts: {
     ERC721: {
-      network: "arbitrum",
+      network: "optimism",
       abi: erc721ABI,
-      address: "0x6325439389E0797Ab35752B4F43a14C004f22A9c",
-      startBlock: 3163146,
-      endBlock: 3200000,
+      address: "0x2335022c740d17c2837f9c884bfe4ffdbf0a95d5",
+      startBlock: 
+      49670713,
     },
   },
 });
